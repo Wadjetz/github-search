@@ -1,0 +1,50 @@
+<div class="l-container">
+	<div class="row">
+		<div class="col-s-12 col-m-12 col-l-12">
+			<div class="card">
+				<h1>Search GitHub project</h1>
+				<form name="formSearch" ng-submit="submitSearch()" novalidate>
+					<form name="formSearch" ng-submit="submitSearch()" novalidate>
+						<div class="form-group">
+							<div class="form-addon">
+								<input type="text" name="query" id="query" ng-model="query" class="addon-input" required />
+								<input type="submit" name="search" id="search" value="Search" class="addon" ng-disabled="!formSearch.$valid" />
+							</div>
+						</div>
+					</form>
+				</form>
+			</div>
+		</div>
+		<div class="col-s-12 col-m-12 col-l-12">
+			<div class="row">
+				<div class="loading" ng-show="loading > 0">
+					<div class="loader loader-quart"></div>
+				</div>
+				<div class="col-s-12 col-m-12 col-l-12" ng-show="total_count == 0">
+					<div class="card">
+						Not Found
+					</div>
+				</div>
+				<div ng-repeat="item in resultSearch.items" class="col-s-12 col-m-6 col-l-6">
+					<div class="card">
+						<div class="repository">
+							<img src="{{item.owner.avatar_url}}" alt="" class="avatar">
+							<h2><a ui-sref="repository({ owner: item.owner.login, repo: item.name })">{{item.full_name}}</a></h2>
+							<div>
+								<span class="label label--grey" ng-show="item.fork">Fork</span>
+								<span class="label label--blue"><i class="fa fa-star"></i> {{item.stargazers_count}}</span>
+								<span class="label label--blue"><i class="fa fa-code-fork"></i> {{item.forks_count}}</span>
+								<span class="label label--blue"><i class="fa fa-eye"></i> {{item.watchers_count}}</span>
+							</div>
+							<p>
+								{{item.description}}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+

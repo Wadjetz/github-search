@@ -1,0 +1,21 @@
+{
+  "name": "github-search",
+  "version": "0.0.0",
+  "authors": [
+    "Wadjetz <egor.neon@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "font-awesome": "~4.2.0",
+    "normalize-css": "~3.0.2"
+  }
+}

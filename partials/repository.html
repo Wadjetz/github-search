@@ -1,0 +1,79 @@
+<div class="l-container">
+	<div class="project row">
+		<div class="col-s-12 col-m-12 col-l-12">
+			<div class="card">
+				<div class="loading" ng-show="loading > 0">
+					<div class="loader loader-quart"></div>
+				</div>
+				<div class="clear">
+					<img src="{{repository.owner.avatar_url}}" alt="" class="avatar" />
+				</div>
+				<div>
+					<h2 class="project-title"><a href="{{repository.html_url}}">{{repository.full_name}}</a></h2>
+					<div ng-show="repository.homepage != null">
+						Site <a href="{{repository.homepage}}">{{repository.homepage}}</a>
+					</div>
+					<span class="label label--grey" ng-show="repository.fork">Fork</span>
+					<span class="label label--black" ng-show="repository.language != null">Language {{repository.language}}</span>
+					<span class="label label--blue"><i class="fa fa-star"></i> {{repository.stargazers_count}}</span>
+					<span class="label label--blue"><i class="fa fa-code-fork"></i> {{repository.forks_count}}</span>
+					<span class="label label--blue"><i class="fa fa-eye"></i> {{repository.watchers_count}}</span>
+					<span class="label label--green" ng-show="activity > 0 && activity < 2">Update very frequently</span>
+					<span class="label label--blue" ng-show="activity > 2 && activity < 30">Update frequently</span>
+					<span class="label label--amber" ng-show="activity > 30 && activity < 360">Not frequently update</span>
+					<span class="label label--red" ng-show="activity > 360">No update from long time</span>
+					
+					<div ng-show="repository.description != null">
+						<p>
+							{{repository.description}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-s-12 col-m-6 col-l-6">
+			<div class="card">
+				<div class="contributors">
+					<h3>Contributors</h3>
+					<div class="loading" ng-show="loading > 0">
+						<div class="loader loader-quart"></div>
+					</div>
+					<table>
+						<tr ng-repeat="item in contributors track by $index">
+							<td class="contributor">
+								<a href="http://github.com/{{item[0]}}">{{item[0]}}</a>
+							</td>
+							<td>
+								<span class="label label--green">{{item[1]}} commits</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-s-12 col-m-6 col-l-6">
+			<div class="card">
+				<h3>Commits timeline</h3>
+				<div class="loading" ng-show="loading > 0">
+					<div class="loader loader-quart"></div>
+				</div>
+				<table class="timeline">
+					<tr ng-repeat="commit in commits | orderBy:date">
+						<td>
+							{{commit.date | date:'d MMMM yyyy'}}
+						</td>
+						<td>
+							<span class="label label--green">{{commit.nb}} commits</span>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="col-s-12 col-m-12 col-l-12">
+			<div ng-repeat="commit in commitData">
+				{{commit}}
+			</div>
+		</div>
+	</div>
+</div>
+

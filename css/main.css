@@ -1,0 +1,79 @@
+/*-----------------------------------------------------------------------------\
+	Google UI Color Palette
+	http://www.google.com/design/spec/style/color.html#color-ui-color-palette
+\-----------------------------------------------------------------------------*/
+/* line 11, ../sass/main.scss */
+.repository .avatar {
+  width: 50px;
+  float: left;
+  margin-right: 10px;
+}
+/* line 17, ../sass/main.scss */
+.repository a {
+  color: black;
+}
+/* line 20, ../sass/main.scss */
+.repository h2 {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 26, ../sass/main.scss */
+.project {
+  min-height: 400px;
+  padding: 10px;
+}
+/* line 30, ../sass/main.scss */
+.project .avatar {
+  width: 100px;
+  margin-right: 20px;
+  float: left;
+}
+/* line 36, ../sass/main.scss */
+.project .project-title {
+  padding: 0;
+  margin: 0;
+}
+/* line 39, ../sass/main.scss */
+.project .project-title a {
+  color: #212121;
+}
+
+/* line 45, ../sass/main.scss */
+.contributors {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 48, ../sass/main.scss */
+.contributors td {
+  padding: 5px;
+}
+
+/* line 54, ../sass/main.scss */
+.timeline td {
+  padding: 5px;
+}
+
+/* line 59, ../sass/main.scss */
+.autocomplete-result {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  background-color: white;
+  z-index: 30;
+  list-style: none;
+}
+/* line 68, ../sass/main.scss */
+.autocomplete-result li:hover {
+  cursor: default;
+  background-color: #EEEEEE;
+}
+/* line 73, ../sass/main.scss */
+.autocomplete-result .autocomplete-item {
+  padding: 3px;
+}
+
+/* line 78, ../sass/main.scss */
+.clear {
+  clear: both;
+}

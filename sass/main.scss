@@ -1,0 +1,81 @@
+@import "compass";
+
+$small: 340px;
+$medium: 768px;
+$large: 1024px;
+
+@import "base/color";
+
+.repository {
+
+	.avatar {
+		width: 50px;
+		float: left;
+		margin-right: 10px;
+	}
+
+	a {
+		color: black;
+	}
+	h2 {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.project {
+	min-height: 400px;
+	padding: 10px;
+
+	.avatar {
+		width: 100px;
+		margin-right: 20px;
+		float: left;
+	}
+
+	.project-title {
+		padding: 0;
+		margin: 0;
+		a {
+			color: $color-grey-900;
+		}
+	}
+}
+
+.contributors {
+	@include clearfix;
+
+	td {
+		padding: 5px;
+	}
+}
+
+.timeline {
+	td {
+		padding: 5px;
+	}
+}
+
+.autocomplete-result {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	background-color: white;
+	z-index: 30;
+	
+	list-style: none;
+
+	li:hover {
+		cursor: default;
+		background-color: #EEEEEE;
+	}
+
+	.autocomplete-item {
+		padding: 3px;
+	}
+}
+
+.clear {
+	clear: both;
+}
+

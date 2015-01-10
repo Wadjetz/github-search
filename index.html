@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr-FR" ng-app="HomeworkZengularityApp">
+<head>
+	<meta charset="UTF-8" />
+	<title>GitHub Project Search</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/neon.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<style>
+		.ui-autocomplete {
+			position: absolute;
+			top: 0;
+			left: 0;
+			cursor: default;
+		}
+	</style>
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="cards">
+	<div class="site-container">
+		<div class="site-pusher">
+			<header class="topbar">
+				<div class="topbar-container">
+					<a href="#" class="topbar-toggle" id="topbar-toggle"></a>
+					<a href="#" class="topbar-logo">GitHub Project Search</a>
+					<nav class="topbar-menu">
+						<a href="#/">Home</a>
+					</nav>
+				</div>
+			</header>
+
+			<div class="site-content">
+				<div ui-view="main"></div>
+			</div>
+			
+			<div class="site-cache" id="site-cache"></div>
+		</div>
+	</div>
+	
+	
+	<script src="js/jquery.min.js"></script>
+	<script>
+		(function($) {
+		    $(document).ready(function() {
+
+		    	$('#topbar-toggle').on('click', function(e) {
+		            e.preventDefault();
+		            $('body').toggleClass('with--sidebar');
+		        });
+		        $('#site-cache').on('click', function(e) {
+		            e.preventDefault();
+		            $('body').removeClass('with--sidebar');
+		        });
+		    });
+		})(jQuery);
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-ui-router.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/github-service.js"></script>
+</body>
+</html>
+
+
+
